@@ -1,0 +1,7 @@
+{
+  "name": "OFFBYONE - Logistics & Exception Command Center",
+  "description": "OFFBYONE Real-time India logistics shipment tracking across Dedicated Freight Corridors (WDFC), National Highways (NH-48), and air freight, with SLA exception mitigation command.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
