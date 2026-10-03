@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const shipmentEtaSchema = z.object({
+export const webhookPayloadSchema = z.object({
   trackingNumber: z.string().optional(),
   shipmentId: z.string().optional(),
   carrier: z.string().optional(),
@@ -9,9 +9,10 @@ export const shipmentEtaSchema = z.object({
   status: z.string().optional(),
   delayReason: z.string().optional(),
   location: z.string().optional(),
+  eventDetails: z.record(z.any()).optional(),
 });
 
-export const slaExceptionSchema = z.object({
+export const slaExceptionOutputSchema = z.object({
   exceptionType: z.string(),
   severity: z.enum(['LOW', 'MEDIUM', 'HIGH', 'CRITICAL']),
   summary: z.string(),
@@ -19,5 +20,5 @@ export const slaExceptionSchema = z.object({
   impactAnalysis: z.string().optional(),
 });
 
-export type ShipmentEtaInput = z.infer<typeof shipmentEtaSchema>;
-export type SlaExceptionOutput = z.infer<typeof slaExceptionSchema>;
+export type WebhookPayload = z.infer<typeof webhookPayloadSchema>;
+export type SlaExceptionOutput = z.infer<typeof slaExceptionOutputSchema>;
